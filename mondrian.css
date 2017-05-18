@@ -1,0 +1,12 @@
+html {
+    background-color: cyan;
+}
+
+canvas {
+    border: 1px solid black;
+    background-color: beige;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 40px;
+}
