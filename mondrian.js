@@ -98,17 +98,14 @@
     function chooseColor(){
 
         number = randomNumber(0, 100);
-        console.log(number);
-        if(number < 40){
+        if(number < 55){
             color = color_base;
-        } else if(number < 60){
+        } else if(number < 70){
             color = color_0;
-        } else if (number < 80){
+        } else if (number < 85){
             color = color_1;
         } else {
-            console.log("hello?");
             color = color_2;
-            console.log(color);
         }
         return color;
     }
