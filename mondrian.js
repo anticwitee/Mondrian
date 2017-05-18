@@ -68,7 +68,7 @@
         //Need to generate a random width and height
         //Safeguard against overwriting
         //Create and push rect object
-        //Return J to indicate next position/row (efficiency)
+        //Return block_width to indicate next position/row (efficiency)
 
         var block_width = randomNumber(1, Math.min((bitmap[i].length - j), max_box_size_x));
         var block_height = randomNumber(1, Math.min((bitmap.length - i), max_box_size_y));
@@ -141,26 +141,38 @@
         stop();
         ctx.clearRect(0, 0, width, height);
         event.preventDefault();
-        x_div = document.querySelector('#x_div');
-        y_div = document.querySelector('#y_div');
-        base_colour = document.querySelector('#base_colour');
-        colour_0 = document.querySelector('#colour_0');
-        colour_1 = document.querySelector('#colour_1');
-        colour_2 = document.querySelector('#colour_2');
 
-        x_res = Number(x_div.value);
-        y_res = Number(y_div.value);
-        color_base = base_colour.value;
-        color_0 = colour_0.value;
-        color_1 = colour_1.value;
-        color_2 = colour_2.value;
+        var x_div = document.querySelector('#x_div');
+        var y_div = document.querySelector('#y_div');
+        var base_colour = document.querySelector('#base_colour');
+        var colour_0 = document.querySelector('#colour_0');
+        var colour_1 = document.querySelector('#colour_1');
+        var colour_2 = document.querySelector('#colour_2');
 
-        
-        bitmap = [];   //Table of availability
-        max_box_size_x = Math.floor(x_res / 3);   //Maximum width of an individual rectangle
-        max_box_size_y = Math.floor(y_res / 3);   //Maximum height of an individual rectangle
-        cell_size_x = 0;  //pixel width of a cell
-        cell_size_y = 0;  //pixel height of a cell
+        if (x_div.value){
+            x_res = Number(x_div.value);
+        }
+        if (y_div.value){
+            y_res = Number(y_div.value);
+        }
+        if (base_colour.value){
+            color_base = base_colour.value;
+        }
+        if (colour_0.value){
+            color_0 = colour_0.value;
+        }
+        if (colour_1.value){
+            color_1 = colour_1.value;
+        }
+        if (colour_2.value){
+            color_2 = colour_2.value;
+        }
+
+        bitmap = [];
+        max_box_size_x = Math.floor(x_res / 3);
+        max_box_size_y = Math.floor(y_res / 3);
+        cell_size_x = 0;
+        cell_size_y = 0;
         rect_obj = [];
         index = 0;
 
