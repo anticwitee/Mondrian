@@ -29,6 +29,8 @@
         ctx = canvas.getContext('2d');
         width = canvas.width;
         height = canvas.height;
+        form = document.querySelector('form');
+        form.addEventListener('submit', change_variables, false);
 
         cell_size_x = Math.floor(width / x_res);
         cell_size_y = Math.floor(height / y_res);
@@ -131,8 +133,42 @@
             index++;
 
         } else {
-            clearInterval(drawing);
+            stop();
         }
+    }
+
+    function change_variables(event){
+        stop();
+        ctx.clearRect(0, 0, width, height);
+        event.preventDefault();
+        x_div = document.querySelector('#x_div');
+        y_div = document.querySelector('#y_div');
+        base_colour = document.querySelector('#base_colour');
+        colour_0 = document.querySelector('#colour_0');
+        colour_1 = document.querySelector('#colour_1');
+        colour_2 = document.querySelector('#colour_2');
+
+        x_res = Number(x_div.value);
+        y_res = Number(y_div.value);
+        color_base = base_colour.value;
+        color_0 = colour_0.value;
+        color_1 = colour_1.value;
+        color_2 = colour_2.value;
+
+        
+        bitmap = [];   //Table of availability
+        max_box_size_x = Math.floor(x_res / 3);   //Maximum width of an individual rectangle
+        max_box_size_y = Math.floor(y_res / 3);   //Maximum height of an individual rectangle
+        cell_size_x = 0;  //pixel width of a cell
+        cell_size_y = 0;  //pixel height of a cell
+        rect_obj = [];
+        index = 0;
+
+        init();
+    }
+
+    function stop(){
+        clearInterval(drawing);
     }
 
 

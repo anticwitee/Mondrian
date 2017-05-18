@@ -7,6 +7,33 @@
         <link rel = 'stylesheet' href = 'mondrian.css' />
     </head>
     <body>
-        <canvas id = 'mon' width = '500' height = '500'></canvas>
+        <header>
+            <h1> Mondrian Art </h1>
+        </header>
+        <main>
+            <canvas id = 'mon' width = '500' height = '500'></canvas>
+            <form action = '' method = 'GET'>
+                <fieldset>
+                    <legend> Size </legend>
+                    <label for = 'x_div'> X Divisions </label>
+                    <input type = 'number' name = 'x_div' placeholder = 'For example, 20.' id = 'x_div'/>
+                    <label for = 'y_div'> Y Divisions </label>
+                    <input type = 'number' name = 'y_div' placeholder = 'For example, 20.' id = 'y_div'/>
+                </fieldset>
+                <fieldset>
+                    <legend> Colours </legend>
+                    <label for = 'base_colour'> Base Colour </label>
+                    <input type = 'text' name = 'base_colour' placeholder = 'Name/Hex Colour' id = 'base_colour'/>
+                    <label for = 'colour_0'> Colour 1 </label>
+                    <input type = 'text' name = 'colour_0' placeholder = 'Name/Hex Colour' id = 'colour_0'/>
+                    <label for = 'colour_1'> Colour 2 </label>
+                    <input type = 'text' name = 'colour_1' placeholder = 'Name/Hex Colour' id = 'colour_1'/>
+                    <label for = 'colour_2'> Colour 3 </label>
+                    <input type = 'text' name = 'colour_2' placeholder = 'Name/Hex Colour' id = 'colour_2'/>
+                </fieldset>
+                <input type = 'submit' value = 'Update' id = 'submit' />
+            </form>
+        </main>
+
     </body>
 </html>
